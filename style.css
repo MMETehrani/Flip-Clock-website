@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a1a;
+    font-family: 'Arial', sans-serif;
+}
+
+.clock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 5%; /* فاصله بین باکس‌ها */
+}
+
+.time-container {
+    display: flex;
+    flex-direction: row;
+    gap: 5%;
+}
+
+.time-box {
+    position: relative;
+    width: 35vw; /* عرض باکس به نسبت عرض صفحه */
+    height: 35vw; /* ارتفاع باکس به نسبت عرض صفحه */
+    background-color: #333;
+    color: #fff;
+    font-size: 10vw; /* سایز فونت به نسبت عرض صفحه */
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.time-box span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
+}
+
+.time-box .bottom {
+    background-color: #333;
+    border-top: 2px solid black;
+    transform-origin: center;
+}
+
+.time-box span::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #333;
+    top: 50%;
+}
+
+.flip {
+    animation: flip 0.6s forwards;
+}
+
+@keyframes flip {
+    0% {
+        transform: rotateX(0deg);
+    }
+    100% {
+        transform: rotateX(-90deg);
+    }
+}
+
+/* تنظیمات برای تبلت و موبایل */
+@media (max-width: 768px) {
+    .clock {
+        flex-direction: column; /* باکس‌ها به صورت عمودی قرار می‌گیرند */
+        gap: 20px; /* فاصله بین باکس‌ها */
+    }
+
+    .time-box {
+        width: 60vw; /* عرض باکس در تبلت و موبایل */
+        height: 60vw; /* ارتفاع باکس در تبلت و موبایل */
+        font-size: 25vw; /* سایز فونت در تبلت و موبایل */
+    }
+
+    .time-container {
+        flex-direction: column; /* باکس‌ها یکی بالای دیگری قرار می‌گیرند */
+    }
+
+    .time-box:first-child {
+        order: 1; /* باکس ساعت در بالای باکس دقیقه قرار می‌گیرد */
+    }
+
+    .time-box {
+        margin-bottom: 30px; /* فاصله بین باکس‌ها در موبایل و تبلت */
+    }
+}
