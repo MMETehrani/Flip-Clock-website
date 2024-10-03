@@ -115,7 +115,7 @@ body {
     position: fixed; /* دکمه همیشه در یک جای ثابت قرار می‌گیرد */
     top: 20px; /* فاصله از بالا */
     right: 20px; /* فاصله از راست */
-    background-color: #444; /* رنگ پس‌زمینه دکمه */
+    background-color: #121212; /* رنگ پس‌زمینه دکمه */
     color: white; /* رنگ متن دکمه */
     border: none; /* حذف حاشیه دکمه */
     padding: 10px 20px; /* فاصله داخلی دکمه */
@@ -126,5 +126,5 @@ body {
 }
 
 #fullscreen-btn:hover {
-    background-color: #666; /* تغییر رنگ دکمه در هنگام هاور */
+    background-color: #121212; /* تغییر رنگ دکمه در هنگام هاور */
 }
