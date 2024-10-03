@@ -10,8 +10,7 @@ body {
 
 /* تم تاریک */
 .dark-theme {
-    background-color: #000000;
-    color: #ffffff;
+    background-color: black;
 }
 
 .dark-theme .time-box {
@@ -24,10 +23,16 @@ body {
     color: #ffffff;
 }
 
+.dark-theme #fullscreen-btn svg,.dark-theme #toggle-btn svg,.dark-theme #theme-btn svg {
+    width: 100%; 
+    height: 100%;
+    color: white;
+}
+
 /* تم روشن */
 .light-theme {
     background-color: #f0f0f0;
-    color: #000000;
+    /* color: #000; */
 }
 
 .light-theme .time-box {
@@ -38,6 +43,12 @@ body {
 .light-theme #fullscreen-btn, .light-theme #toggle-btn, .light-theme #theme-btn {
     background-color: #ffffff;
     color: #000;
+}
+
+.light-theme #fullscreen-btn svg,.light-theme #toggle-btn svg,.light-theme #theme-btn svg {
+    width: 100%; 
+    height: 100%;
+    color: black;
 }
 
 /* تنظیمات برای بخش اصلی ساعت */
@@ -120,8 +131,6 @@ body {
 /* استایل دکمه‌ها */
 #fullscreen-btn, #toggle-btn, #theme-btn {
     position: fixed;
-    background-color: #121212;
-    color: white;
     border: none;
     padding: 10px 20px;
     font-size: 16px;
@@ -169,23 +178,53 @@ body {
 
 /* تنظیمات برای تبلت و موبایل */
 @media (max-width: 768px) {
-    .clock {
+    .dark-theme .clock, .light-theme .clock {
         flex-direction: column;
         gap: 20px;
     }
 
-    .time-box {
+    .dark-theme .time-box, .light-theme .time-box {
         width: 70vw;
         height: 70vw;
         font-size: 35vw;
     }
 
-    .time-container {
+    .dark-theme .time-container, .light-theme .time-container {
         flex-direction: column;
         gap: 20px;
     }
 
-    .am-pm {
+    .dark-theme .am-pm, .light-theme .am-pm {
         font-size: 5vw;
     }
+}
+
+#fullscreen-btn, #toggle-btn, #theme-btn {
+    position: fixed;
+    border: none;
+    padding: 10px; 
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+    width: 50px; 
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#fullscreen-btn {
+    top: 20px;
+    right: 20px;
+}
+
+#toggle-btn {
+    top: 80px;
+    right: 20px;
+}
+
+#theme-btn {
+    top: 140px;
+    right: 20px;
 }
