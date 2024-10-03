@@ -1,5 +1,6 @@
 // متغیر برای نگهداری حالت 24 ساعته یا 12 ساعته
 let is24HourFormat = true; // مقداردهی اولیه قبل از فراخوانی هر تابع
+let timeoutId;
 
 // تابع به‌روزرسانی زمان
 function updateTime() {
@@ -66,3 +67,35 @@ document.getElementById("toggle-btn").addEventListener("click", function() {
     is24HourFormat = !is24HourFormat; // تغییر حالت 12 ساعته/24 ساعته
     updateTime(); // به‌روزرسانی زمان برای تغییر نمایش AM/PM و قالب ساعت
 });
+
+
+// تابع برای پنهان کردن دکمه‌ها
+function hideButtons() {
+    console.log('پنهان کردن دکمه‌ها'); // بررسی با استفاده از کنسول
+    document.getElementById('fullscreen-btn').style.opacity = '0'; // مخفی کردن با تنظیم شفافیت
+    document.getElementById('toggle-btn').style.opacity = '0'; // مخفی کردن با تنظیم شفافیت
+    document.getElementById('fullscreen-btn').style.visibility = 'hidden'; // برای اطمینان از پنهان شدن
+    document.getElementById('toggle-btn').style.visibility = 'hidden'; // برای اطمینان از پنهان شدن
+}
+
+// تابع برای نمایش دکمه‌ها
+function showButtons() {
+    console.log('نمایش دکمه‌ها'); // بررسی با استفاده از کنسول
+    document.getElementById('fullscreen-btn').style.opacity = '1'; // نمایش دادن با تنظیم شفافیت
+    document.getElementById('toggle-btn').style.opacity = '1'; // نمایش دادن با تنظیم شفافیت
+    document.getElementById('fullscreen-btn').style.visibility = 'visible'; // نمایش دکمه‌ها
+    document.getElementById('toggle-btn').style.visibility = 'visible'; // نمایش دکمه‌ها
+}
+
+// تنظیم یک تایمر برای پنهان کردن دکمه‌ها پس از 3 ثانیه عدم حرکت موس
+function resetTimeout() {
+    showButtons(); // هر بار که موس حرکت می‌کند دکمه‌ها نمایش داده می‌شوند
+    clearTimeout(timeoutId); // تایمر قبلی را پاک می‌کنیم
+    timeoutId = setTimeout(hideButtons, 3000); // بعد از 3 ثانیه دکمه‌ها پنهان می‌شوند
+}
+
+// اضافه کردن رویداد حرکت موس به سند
+document.addEventListener('mousemove', resetTimeout);
+
+// شروع اولیه: پس از 3 ثانیه از بارگذاری صفحه، دکمه‌ها پنهان می‌شوند
+timeoutId = setTimeout(hideButtons, 3000);
