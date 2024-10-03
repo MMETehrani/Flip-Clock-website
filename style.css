@@ -182,6 +182,7 @@ body {
 
     .time-container {
         flex-direction: column;
+        gap: 20px;
     }
 
     .am-pm {
