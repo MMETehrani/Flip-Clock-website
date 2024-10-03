@@ -6,6 +6,7 @@ body {
     justify-content: center; 
     align-items: center; 
     background-color: #000000;
+    color: #ffffff;
     font-family: 'Arial', sans-serif;
 }
 
@@ -53,12 +54,12 @@ body {
     line-height: 1;
 }
 
-/* تنظیمات برای بخش پایین باکس */
+/* تنظیمات برای بخش پایین باکس
 .time-box .bottom {
     background-color: #121212;
     border-top: 2px solid black;
     transform-origin: center;
-}
+} */
 
 /* تنظیمات برای خطی که اعداد را نصف می‌کند */
 .time-box span::after {

@@ -3,6 +3,11 @@ let is24HourFormat = true; // مقداردهی اولیه قبل از فراخو
 let timeoutId;
 let isMobile = window.matchMedia("(max-width: 768px)").matches; // بررسی حالت موبایل
 
+// تابع تغییر تم
+document.getElementById("theme-btn").addEventListener("click", function() {
+    document.body.classList.toggle("light-theme");
+});
+
 // تابع به‌روزرسانی زمان
 function updateTime() {
     const hourBox = document.getElementById('hour'); // دسترسی به باکس ساعت
