@@ -9,17 +9,19 @@
 <body>
     <div class="clock">
         <div class="time-container">
-            <div class="time-box hour" id="hour">
-                <span class="am-pm" id="am-pm"></span>
+            <div id="hour" class="time-box">
                 <span class="top">12</span>
                 <span class="bottom">12</span>
             </div>
-            <div class="time-box minute" id="minute">
+            <div id="minute" class="time-box">
                 <span class="top">59</span>
-                <span class="bottom">00</span>
+                <span class="bottom">59</span>
             </div>
         </div>
+        <!-- انتقال AM/PM به خارج از time-box -->
+        <span id="am-pm" class="am-pm">AM</span>
     </div>
+    
     <button id="fullscreen-btn">⛶ Fullscreen</button>
     <button id="toggle-btn">12H/24H Toggle</button>
 
