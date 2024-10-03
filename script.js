@@ -28,3 +28,13 @@ setInterval(updateTime, 1000);
 
 // Initial time setting
 updateTime();
+
+document.getElementById("fullscreen-btn").addEventListener("click", function() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen(); // ورود به حالت تمام صفحه
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen(); // خروج از حالت تمام صفحه
+        }
+    }
+});
