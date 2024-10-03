@@ -1,6 +1,7 @@
 // متغیر برای نگهداری حالت 24 ساعته یا 12 ساعته
 let is24HourFormat = true; // مقداردهی اولیه قبل از فراخوانی هر تابع
 let timeoutId;
+let isMobile = window.matchMedia("(max-width: 768px)").matches; // بررسی حالت موبایل
 
 // تابع به‌روزرسانی زمان
 function updateTime() {
@@ -87,15 +88,19 @@ function showButtons() {
     document.getElementById('toggle-btn').style.visibility = 'visible'; // نمایش دکمه‌ها
 }
 
-// تنظیم یک تایمر برای پنهان کردن دکمه‌ها پس از 3 ثانیه عدم حرکت موس
+// تنظیم تایمر برای پنهان کردن دکمه‌ها پس از 3 ثانیه عدم فعالیت
 function resetTimeout() {
-    showButtons(); // هر بار که موس حرکت می‌کند دکمه‌ها نمایش داده می‌شوند
-    clearTimeout(timeoutId); // تایمر قبلی را پاک می‌کنیم
-    timeoutId = setTimeout(hideButtons, 3000); // بعد از 3 ثانیه دکمه‌ها پنهان می‌شوند
+    showButtons(); // نمایش دکمه‌ها هنگام حرکت یا کلیک
+    clearTimeout(timeoutId); // پاک کردن تایمر قبلی
+    timeoutId = setTimeout(hideButtons, 3000); // پنهان کردن دکمه‌ها بعد از 3 ثانیه
 }
 
-// اضافه کردن رویداد حرکت موس به سند
-document.addEventListener('mousemove', resetTimeout);
+// رویداد کلیک یا حرکت موس برای نمایش دکمه‌ها
+if (isMobile) {
+    document.addEventListener('click', resetTimeout); // در حالت موبایل، با کلیک روی صفحه دکمه‌ها نمایش داده شوند
+} else {
+    document.addEventListener('mousemove', resetTimeout); // در حالت دسکتاپ، با حرکت موس دکمه‌ها نمایش داده شوند
+}
 
-// شروع اولیه: پس از 3 ثانیه از بارگذاری صفحه، دکمه‌ها پنهان می‌شوند
+// شروع اولیه: دکمه‌ها پس از 3 ثانیه از بارگذاری صفحه پنهان می‌شوند
 timeoutId = setTimeout(hideButtons, 3000);
