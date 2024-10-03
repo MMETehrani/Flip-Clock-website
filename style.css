@@ -1,142 +1,161 @@
 /* تنظیمات اصلی برای بدنه صفحه */
 body {
-    margin: 0; /* حذف حاشیه‌های پیش‌فرض */
-    height: 100vh; /* ارتفاع کامل صفحه */
-    display: flex; /* تنظیم حالت Flexbox برای قرارگیری وسط */
-    justify-content: center; /* مرکز کردن افقی محتوا */
-    align-items: center; /* مرکز کردن عمودی محتوا */
-    background-color: #000000; /* پس‌زمینه تاریک */
-    font-family: 'Arial', sans-serif; /* تنظیم فونت پیش‌فرض */
+    margin: 0; 
+    height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    background-color: #000000;
+    font-family: 'Arial', sans-serif;
 }
 
 /* تنظیمات برای بخش اصلی ساعت */
 .clock {
-    display: flex; /* استفاده از Flexbox برای قرار دادن باکس‌ها کنار هم */
-    justify-content: center; /* مرکز کردن افقی باکس‌ها */
-    align-items: center; /* مرکز کردن عمودی باکس‌ها */
-    flex-direction: row; /* جهت قرارگیری باکس‌ها به صورت افقی */
-    gap: 5%; /* فاصله بین باکس‌ها */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    position: relative; /* لازم برای موقعیت‌دهی مطلق AM/PM */
 }
 
 /* تنظیمات برای کانتینری که باکس‌ها را نگه می‌دارد */
 .time-container {
-    display: flex; /* استفاده از Flexbox */
-    flex-direction: row; /* باکس‌ها به‌صورت افقی قرار می‌گیرند */
-    gap: 5%; /* فاصله بین باکس‌ها */
+    display: flex; 
+    flex-direction: row;
+    gap: 5%;
 }
 
 /* تنظیمات برای باکس‌های ساعت و دقیقه */
 .time-box {
-    position: relative; /* برای موقعیت‌دهی به محتوا درون باکس */
-    width: 35vw; /* عرض باکس به‌صورت نسبی نسبت به عرض صفحه */
-    height: 35vw; /* ارتفاع باکس هم به نسبت عرض صفحه */
-    background-color: #121212; /* پس‌زمینه تیره برای باکس‌ها */
-    color: #fff; /* رنگ سفید برای متن داخل باکس */
-    font-size: 20vw; /* سایز فونت به‌نسبت عرض صفحه */
-    font-weight: bold; /* متن ضخیم برای اعداد */
-    text-align: center; /* متن در مرکز باکس قرار گیرد */
-    border-radius: 10px; /* گوشه‌های باکس کمی گرد */
-    overflow: hidden; /* جلوگیری از خروج متن از باکس */
-    display: flex; /* استفاده از Flexbox برای مرکز کردن متن */
-    justify-content: center; /* مرکز کردن افقی متن */
-    align-items: center; /* مرکز کردن عمودی متن */
+    position: relative;
+    width: 35vw;
+    height: 35vw;
+    background-color: #121212;
+    color: #fff;
+    font-size: 20vw;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* تنظیمات برای متن داخل باکس‌ها */
 .time-box span {
-    position: absolute; /* متن به‌صورت مطلق داخل باکس قرار می‌گیرد */
-    width: 100%; /* عرض کامل باکس را بگیرد */
-    height: 100%; /* ارتفاع کامل باکس را بگیرد */
-    display: flex; /* استفاده از Flexbox برای مرکز کردن متن */
-    justify-content: center; /* مرکز کردن افقی متن */
-    align-items: center; /* مرکز کردن عمودی متن */
-    line-height: 1; /* فاصله خطی نرمال */
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1;
 }
 
 /* تنظیمات برای بخش پایین باکس */
 .time-box .bottom {
-    background-color: #121212; /* پس‌زمینه تیره */
-    border-top: 2px solid black; /* خط سیاه بین اعداد */
-    transform-origin: center; /* نقطه چرخش وسط باکس */
+    background-color: #121212;
+    border-top: 2px solid black;
+    transform-origin: center;
 }
 
 /* تنظیمات برای خطی که اعداد را نصف می‌کند */
 .time-box span::after {
-    content: ''; /* ایجاد یک خط به‌عنوان پس‌زمینه */
-    position: absolute; /* موقعیت‌دهی به خط */
-    width: 100%; /* عرض کامل باکس */
-    height: 5px; /* ارتفاع خط */
-    background-color: #121212; /* رنگ تیره برای خط */
-    top: 48%; /* موقعیت خط در مرکز باکس */
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background-color: #121212;
+    top: 48%;
 }
 
 /* انیمیشن فلیپ برای تغییر اعداد */
 .flip {
-    animation: flip 0.6s forwards; /* اجرای انیمیشن چرخش به مدت 0.6 ثانیه */
+    animation: flip 0.6s forwards;
 }
 
 /* تعریف انیمیشن فلیپ */
 @keyframes flip {
     0% {
-        transform: rotateX(0deg); /* حالت اولیه بدون چرخش */
+        transform: rotateX(0deg);
     }
     100% {
-        transform: rotateX(-90deg); /* چرخش 90 درجه در محور X */
+        transform: rotateX(-90deg);
     }
 }
 
 /* تنظیمات برای تبلت و موبایل */
 @media (max-width: 768px) {
     .clock {
-        flex-direction: column; /* تغییر جهت به عمودی برای نمایش بهتر در موبایل */
-        gap: 20px; /* فاصله بیشتر بین باکس‌ها */
+        flex-direction: column;
+        gap: 20px;
     }
 
     .time-box {
-        width: 60vw; /* عرض باکس در موبایل و تبلت */
-        height: 60vw; /* ارتفاع باکس در موبایل و تبلت */
-        font-size: 25vw; /* بزرگ‌تر کردن سایز فونت برای موبایل و تبلت */
+        width: 70vw;
+        height: 70vw;
+        font-size: 25vw;
     }
 
     .time-container {
-        flex-direction: column; /* باکس‌ها یکی بالای دیگری قرار بگیرند */
+        flex-direction: column;
     }
 
     .time-box:first-child {
-        order: 1; /* قرار دادن باکس ساعت بالاتر از باکس دقیقه */
+        order: 1;
     }
 
     .time-box {
-        margin-bottom: 30px; /* ایجاد فاصله بین باکس‌ها */
+        margin-bottom: 30px;
+    }
+
+    .am-pm {
+        font-size: 30vw; /* تغییر اندازه فونت برای موبایل */
     }
 }
 
+/* تنظیمات دکمه‌های تمام صفحه و تغییر حالت ساعت */
 #fullscreen-btn, #toggle-btn {
-    position: fixed; /* دکمه ها همیشه در یک جای ثابت قرار می‌گیرند */
-    background-color: #121212; /* رنگ پس‌زمینه دکمه */
-    color: white; /* رنگ متن دکمه */
-    border: none; /* حذف حاشیه دکمه */
-    padding: 10px 20px; /* فاصله داخلی دکمه */
-    font-size: 16px; /* اندازه فونت */
-    border-radius: 5px; /* گرد کردن گوشه‌های دکمه */
-    cursor: pointer; /* تغییر شکل نشانگر موس به حالت کلیک */
-    z-index: 1000; /* اولویت نمایش دکمه بالاتر از سایر عناصر */
+    position: fixed;
+    background-color: #121212;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
 }
 
 #fullscreen-btn {
-    top: 20px; /* فاصله از بالا */
-    right: 20px; /* فاصله از راست */
+    top: 20px;
+    right: 20px;
 }
 
 #toggle-btn {
-    top: 70px; /* فاصله از بالا برای دکمه تغییر ساعت */
-    right: 20px; /* فاصله از راست */
+    top: 70px;
+    right: 20px;
 }
+
+/* تنظیمات برای نمایش AM/PM */
 
 .am-pm {
     position: absolute;
-    top: 5px; /* فاصله از بالای باکس */
-    right: 10px; /* فاصله از راست */
-    font-size: 20px; /* سایز فونت برای AM/PM */
-    color: #fff; /* رنگ سفید */
+    top: 20px; /* فاصله از بالای باکس */
+    left: 20px; /* فاصله از سمت چپ باکس */
+    font-size: 1.5vw;
+    color: #ffffffce;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 10;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .am-pm {
+        top: 10px; /* تنظیم فاصله برای موبایل */
+        left: 10px; /* تنظیم فاصله برای موبایل */
+        font-size: 5vw; /* افزایش سایز فونت در موبایل */
+    }
 }
