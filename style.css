@@ -95,7 +95,7 @@ body {
     .time-box {
         width: 70vw;
         height: 70vw;
-        font-size: 25vw;
+        font-size: 35vw;
     }
 
     .time-container {
@@ -154,8 +154,8 @@ body {
 
 @media (max-width: 768px) {
     .am-pm {
-        top: 10px; /* تنظیم فاصله برای موبایل */
-        left: 10px; /* تنظیم فاصله برای موبایل */
+        top: 20px; /* تنظیم فاصله برای موبایل */
+        left: 20px; /* تنظیم فاصله برای موبایل */
         font-size: 5vw; /* افزایش سایز فونت در موبایل */
     }
 }
