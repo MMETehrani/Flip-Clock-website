@@ -159,3 +159,35 @@ body {
         font-size: 5vw; /* افزایش سایز فونت در موبایل */
     }
 }
+
+
+/* استایل برای تم روشن */
+.light-theme body {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.light-theme .time-box {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+.light-theme #fullscreen-btn, .light-theme #toggle-btn, .light-theme #theme-btn {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
+/* تنظیمات برای دکمه تغییر تم */
+#theme-btn {
+    position: fixed;
+    top: 120px;
+    right: 20px;
+    background-color: #121212;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
