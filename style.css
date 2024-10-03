@@ -111,10 +111,8 @@ body {
     }
 }
 
-#fullscreen-btn {
-    position: fixed; /* دکمه همیشه در یک جای ثابت قرار می‌گیرد */
-    top: 20px; /* فاصله از بالا */
-    right: 20px; /* فاصله از راست */
+#fullscreen-btn, #toggle-btn {
+    position: fixed; /* دکمه ها همیشه در یک جای ثابت قرار می‌گیرند */
     background-color: #121212; /* رنگ پس‌زمینه دکمه */
     color: white; /* رنگ متن دکمه */
     border: none; /* حذف حاشیه دکمه */
@@ -125,3 +123,20 @@ body {
     z-index: 1000; /* اولویت نمایش دکمه بالاتر از سایر عناصر */
 }
 
+#fullscreen-btn {
+    top: 20px; /* فاصله از بالا */
+    right: 20px; /* فاصله از راست */
+}
+
+#toggle-btn {
+    top: 70px; /* فاصله از بالا برای دکمه تغییر ساعت */
+    right: 20px; /* فاصله از راست */
+}
+
+.am-pm {
+    position: absolute;
+    top: 5px; /* فاصله از بالای باکس */
+    right: 10px; /* فاصله از راست */
+    font-size: 20px; /* سایز فونت برای AM/PM */
+    color: #fff; /* رنگ سفید */
+}
