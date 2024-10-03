@@ -1,8 +1,11 @@
+// متغیر برای نگهداری حالت 24 ساعته یا 12 ساعته
+let is24HourFormat = true; // مقداردهی اولیه قبل از فراخوانی هر تابع
+
 // تابع به‌روزرسانی زمان
 function updateTime() {
     const hourBox = document.getElementById('hour'); // دسترسی به باکس ساعت
     const minuteBox = document.getElementById('minute'); // دسترسی به باکس دقیقه
-    const amPmBox = document.getElementById('am-pm'); // دسترسی به باکس AM/PM
+    const amPmBox = document.getElementById('am-pm'); // دسترسی به باکس AM/PM (در صورت وجود)
 
     const currentTime = new Date(); // دریافت زمان فعلی
     let hours = currentTime.getHours(); // دریافت ساعت
@@ -24,7 +27,9 @@ function updateTime() {
     hourBox.querySelector('.bottom').textContent = hours;
 
     // نمایش AM/PM در حالت 12 ساعته
-    amPmBox.textContent = amPm;
+    if (amPmBox) {
+        amPmBox.textContent = amPm; // اگر باکس AM/PM وجود داشت، مقدار AM یا PM را نشان دهد
+    }
 
     // به‌روزرسانی دقیقه‌ها با انیمیشن
     const oldMinute = minuteBox.querySelector('.top').textContent; // ذخیره دقیقه قبلی
@@ -55,9 +60,6 @@ document.getElementById("fullscreen-btn").addEventListener("click", function() {
         }
     }
 });
-
-// متغیر برای نگهداری حالت 24 ساعته یا 12 ساعته
-let is24HourFormat = true;
 
 // دکمه تغییر حالت 12 ساعته/24 ساعته
 document.getElementById("toggle-btn").addEventListener("click", function() {
