@@ -5,7 +5,7 @@ body {
     display: flex; /* تنظیم حالت Flexbox برای قرارگیری وسط */
     justify-content: center; /* مرکز کردن افقی محتوا */
     align-items: center; /* مرکز کردن عمودی محتوا */
-    background-color: #1a1a1a; /* پس‌زمینه تاریک */
+    background-color: #000000; /* پس‌زمینه تاریک */
     font-family: 'Arial', sans-serif; /* تنظیم فونت پیش‌فرض */
 }
 
@@ -30,14 +30,13 @@ body {
     position: relative; /* برای موقعیت‌دهی به محتوا درون باکس */
     width: 35vw; /* عرض باکس به‌صورت نسبی نسبت به عرض صفحه */
     height: 35vw; /* ارتفاع باکس هم به نسبت عرض صفحه */
-    background-color: #333; /* پس‌زمینه تیره برای باکس‌ها */
+    background-color: #121212; /* پس‌زمینه تیره برای باکس‌ها */
     color: #fff; /* رنگ سفید برای متن داخل باکس */
     font-size: 20vw; /* سایز فونت به‌نسبت عرض صفحه */
     font-weight: bold; /* متن ضخیم برای اعداد */
     text-align: center; /* متن در مرکز باکس قرار گیرد */
     border-radius: 10px; /* گوشه‌های باکس کمی گرد */
     overflow: hidden; /* جلوگیری از خروج متن از باکس */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6); /* سایه برای باکس */
     display: flex; /* استفاده از Flexbox برای مرکز کردن متن */
     justify-content: center; /* مرکز کردن افقی متن */
     align-items: center; /* مرکز کردن عمودی متن */
@@ -56,7 +55,7 @@ body {
 
 /* تنظیمات برای بخش پایین باکس */
 .time-box .bottom {
-    background-color: #333; /* پس‌زمینه تیره */
+    background-color: #121212; /* پس‌زمینه تیره */
     border-top: 2px solid black; /* خط سیاه بین اعداد */
     transform-origin: center; /* نقطه چرخش وسط باکس */
 }
@@ -67,8 +66,8 @@ body {
     position: absolute; /* موقعیت‌دهی به خط */
     width: 100%; /* عرض کامل باکس */
     height: 5px; /* ارتفاع خط */
-    background-color: #333; /* رنگ تیره برای خط */
-    top: 50%; /* موقعیت خط در مرکز باکس */
+    background-color: #121212; /* رنگ تیره برای خط */
+    top: 48%; /* موقعیت خط در مرکز باکس */
 }
 
 /* انیمیشن فلیپ برای تغییر اعداد */
