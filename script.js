@@ -36,16 +36,26 @@ function updateTime() {
     if (oldMinute !== minutes) {
         const bottomSpan = minuteBox.querySelector('.bottom');
         bottomSpan.textContent = oldMinute;
-        minuteBox.querySelector('.top').textContent = minutes;
-
-        bottomSpan.classList.remove('flip');
-        void bottomSpan.offsetWidth;
-        bottomSpan.classList.add('flip');
+        
+        // اعمال انیمیشن کوچک شدن برای عدد قبلی
+        bottomSpan.classList.remove('shrink');
+        void bottomSpan.offsetWidth; // بازخوانی برای ریست کردن انیمیشن
+        bottomSpan.classList.add('shrink');
+        
+        // تاخیر برای شروع انیمیشن بزرگ شدن عدد جدید
+        setTimeout(() => {
+            const topSpan = minuteBox.querySelector('.top');
+            topSpan.textContent = minutes;
+            topSpan.classList.remove('expand');
+            void topSpan.offsetWidth; // بازخوانی برای ریست کردن انیمیشن
+            topSpan.classList.add('expand');
+        }, 600);
     }
 }
 
 setInterval(updateTime, 1000);
 updateTime();
+
 
 document.getElementById("fullscreen-btn").addEventListener("click", function() {
     if (!document.fullscreenElement) {

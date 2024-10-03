@@ -119,14 +119,14 @@ body {
 }
 
 /* تعریف انیمیشن فلیپ */
-@keyframes flip {
+/* @keyframes flip {
     0% {
         transform: rotateX(0deg);
     }
     100% {
         transform: rotateX(-90deg);
     }
-}
+} */
 
 /* استایل دکمه‌ها */
 #fullscreen-btn, #toggle-btn, #theme-btn {
@@ -227,4 +227,41 @@ body {
 #theme-btn {
     top: 140px;
     right: 20px;
+}
+
+
+/* انیمیشن جدید برای تغییر ارتفاع و اوپاسیتی */
+@keyframes shrink {
+    0% {
+        transform: scaleY(1);
+        transform-origin: top;
+        opacity: 1;
+    }
+    100% {
+        transform: scaleY(0);
+        transform-origin: bottom;
+        opacity: 0;
+    }
+}
+
+@keyframes expand {
+    0% {
+        transform: scaleY(0);
+        transform-origin: top;
+        opacity: 0;
+    }
+    100% {
+        transform: scaleY(1);
+        transform-origin: bottom;
+        opacity: 1;
+    }
+}
+
+/* تنظیمات مربوط به فلیپ جدید */
+.shrink {
+    animation: shrink 0.6s forwards;
+}
+
+.expand {
+    animation: expand 0.6s forwards;
 }
