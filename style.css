@@ -5,7 +5,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Orbitron', sans-serif;
+    font-family: "Arial", monospace;
     font-weight: 900; /* وزن بولد برای اعداد */
 }
 
