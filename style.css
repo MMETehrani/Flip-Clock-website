@@ -1,3 +1,13 @@
+// <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 400 to 900
+
+.orbitron-<uniquifier> {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: bold;
+}
+
 /* تنظیمات اصلی برای بدنه صفحه */
 body {
     margin: 0;
@@ -5,7 +15,10 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Arial', sans-serif;
+    font-family: "Orbitron", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: bold;
 }
 
 /* تم تاریک */
