@@ -14,7 +14,7 @@ This digital clock not only tells you the time, but it also gives you a cool, vi
 - **Smooth Animations:** Time transitions with awesome flip animations that make checking the time more fun!
 
 ### Check out the website and use it here 👇  
-[Flip Clock Website](https://mmetehrani.github.io/Flip-Clock-website/)
+[Flip Clock Website](https://www.flipq.ir/)
 
 ### Support ❤️
 If you like this project, I’d be super grateful for your support! It keeps me motivated to improve and add more cool features.
